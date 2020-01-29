@@ -1,0 +1,17 @@
+.EventTimes {
+    /* padding-top: 15px;
+    background-color: transparent;
+    border: none;
+    color: black;
+    outline: none;
+    cursor: pointer;
+    font: inherit;
+    padding: 10px;
+    margin: 10px;
+    font-weight: bold;
+    font-size: 1.3em; */
+    padding-top: 1.5em;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: center;
+}

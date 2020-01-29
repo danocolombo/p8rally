@@ -1,0 +1,158 @@
+.Register {
+    width: 80%;
+    margin: 15px auto;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 3px #222;
+    text-align: left;
+}
+
+.Register label {
+    display: block;
+    margin: 10px auto;
+    padding-left: 15px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.Register input,
+.Register textarea,
+.Register select {
+    /* display: block; */
+    /* width: 80%; */
+    size: 50px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    outline: none;
+    font: inherit;
+    margin: auto;
+}
+
+.Register button {
+    margin: 5px 0;
+    padding: 10px;
+    font: inherit;
+    border: 1px solid #fa923f;
+    background-color: transparent;
+    color: #fa923f;
+    cursor: pointer;
+}
+
+.Register button:hover,
+.Register button:active {
+    color: white;
+    background-color: #fa923f;
+}
+
+.RegisterLabel {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+.RegisterControl {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: 20px;
+    font-size: 1em;
+    size: 10;
+}
+.NewsletterLabel .RegCountLabel .HostP8Label {
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    font-size: 1em;
+    font-weight: 500;
+}
+.regBox {
+    border: "1px solid rgb(109, 84, 84)";
+    box-shadow: "0 3px 6px rgb(216, 146, 146)";
+    margin-bottom: "10px";
+    margin-right: "10px";
+    max-width: "350px";
+    padding-left: "10px";
+    padding-top: "10px";
+    padding-bottom: "20px";
+}
+.regIntro {
+    font-size: "14px";
+    padding-bottom: "20px";
+}
+.textField200 {
+    width: "200px";
+}
+
+.textField320 {
+    width: "320px";
+}
+.RallyItem {
+    display: flex;
+    flex-flow: row wrap;
+    /* justify-content: center; */
+    width: 80%;
+    margin: auto;
+}
+.RegisterBox {
+    border: 1px solid rgb(109, 84, 84);
+    box-shadow: 0 2px 3px rgb(216, 146, 146);
+    margin-bottom: 10px;
+    margin-right: 10px;
+    max-width: 350px;
+}
+.RegInnerBox {
+    padding: 20px;
+}
+.FirstNameInput {
+    width: 125px;
+    padding-right: 20px;
+}
+.LastNameInput {
+    width: 125px;
+    padding-left: 10px;
+}
+.EmailInput {
+    width: 300px;
+    margin-left: 20px;
+}
+.SeparatorLine {
+    width: 270px;
+    border: 1px solid blue;
+    margin-bottom: 10px;
+}
+.RegCount {
+    text-align: right;
+    font-size: 14pt;
+}
+.StateSelect {
+    width: 150px;
+}
+.crRoleLabel {
+    margin-top: 15px;
+}
+.crRoleSelect {
+    width: 200px;
+}
+.RegisterButton {
+    margin-top: 20px;
+}
+.RallyDate {
+    font-size: 1.2em;
+    font-weight: bolder;
+    margin-left: 25px;
+    padding-top: 10px;
+    text-align: left;
+}
+.ChurchName {
+    font-size: 1.5em;
+    font-style: italic;
+    margin-left: 25px;
+}
+.ChurchLocation {
+    margin-left: 35px;
+    margin-bottom: 10px;
+}
+.registerButton {
+    font-size: 0.5em;
+    border-radius: 5pt;
+    border-style: solid;
+    border-color: black;
+    padding: 2px 10px 2px 10px;
+    margin-left: 10px;
+    vertical-align: top;
+    color: black;
+    background-color: yellow;
+}

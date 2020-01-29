@@ -1,0 +1,33 @@
+.Rallies {
+    /* display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 80%;
+    margin-left: 30px; */
+    /* margin: auto;  */
+}
+h2 {
+    color: blue;
+    margin-left: 30px;
+    padding-top: 20px;
+}
+intro {
+    color: red;
+}
+.Introduction {
+    /* font-size: 1.0em;
+    font-color: #2400 */
+}
+.EventDate {
+    /* font-size: 1.2em;
+    font-weight: bolder;
+    margin-left: 20px; */
+}
+.ChurchName {
+    /* font-size: 1.5em;
+    font-style: italic;
+    margin-left: 25px; */
+}
+.ChurchLocation {
+    /* margin-left: 35px; */
+}

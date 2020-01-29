@@ -1,0 +1,41 @@
+.RallyItem {
+    display: flex;
+    flex-flow: row wrap;
+    /* justify-content: center; */
+    width: 80%;
+    margin: auto;
+}
+.RallyBox {
+    border: 1px solid rgb(109, 84, 84);
+    box-shadow: 0 2px 3px rgb(216, 146, 146);
+    margin-bottom: 10px;
+    margin-right: 10px;
+    max-width: 400px;
+}
+.RallyDate {
+    font-size: 1.2em;
+    font-weight: bolder;
+    margin-left: 25px;
+    padding-top: 10px;
+    text-align: left;
+}
+.ChurchName {
+    font-size: 1.5em;
+    font-style: italic;
+    margin-left: 25px;
+}
+.ChurchLocation {
+    margin-left: 35px;
+    margin-bottom: 10px;
+}
+.registerButton {
+    font-size: 0.5em;
+    border-radius: 5pt;
+    border-style: solid;
+    border-color: black;
+    padding: 2px 10px 2px 10px;
+    margin-left: 10px;
+    vertical-align: top;
+    color: black;
+    background-color: yellow;
+}

@@ -1,0 +1,81 @@
+.Rally2 {
+    width: 250px;
+    padding: 16px;
+    text-align: center;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 3px #ccc;
+    margin: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+h1 {
+    font-style: italic;
+    font-weight: bolder;
+    font-size: 40px;
+}
+h2 {
+    font-weight: bold;
+    font-size: 2em;
+    margin-left: 0px;
+}
+.Rally:hover,
+.Rally:active {
+    background-color: #c0ddf5;
+}
+.Title {
+    margin: 15px 15px 10px 25px;
+    color: blue;
+}
+.Venue {
+    width: 430px;
+    padding: 16px;
+    text-align: left;
+    border: 1px solid #c0c0c0;
+    box-shadow: 0 2px 3px #808080;
+    margin: 10px;
+    box-sizing: border-box;
+}
+.EventTimes {
+    text-align: center;
+    padding-top: 15px;
+    font-size: 1.2em;
+    font-weight: 550;
+    padding-bottom: 15px;
+}
+.VenueName {
+    font-size: 1.4em;
+    font-weight: 510;
+    margin-left: 35px;
+    margin-top: 20px;
+}
+.VenueAddress {
+    margin-left: 35px;
+    font-size: 1.2em;
+}
+.EventComments {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 35px;
+}
+.VenueMap {
+    border: 3px solid #6a5acd;
+    box-shadow: 0 2px 3px #808080;
+    box-sizing: border-box;
+    width: 400px;
+    height: 300px;
+    padding: 10px;
+}
+.StateRepInfo {
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+#map {
+    height: 100vh;
+}
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}

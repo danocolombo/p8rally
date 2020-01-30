@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Link, useLocation } from "react-router-dom";
 import axios from "axios";
 import EventDate from "../UI/EventDate/EventDate";
 import EventTimes from "../UI/EventTimes/EventTime";
+import Button from "@material-ui/core/Button";
+
 //import Button from "../UI/CustomButton/Button";
 //import axios from "../../utils/axios";
 
@@ -64,14 +66,23 @@ class Rally extends Component {
                                 endTime={rally.eEndTime}
                             />
                             <div>
-                                <img src={rally.eGraphics} width='400' />
+                                <img
+                                    src={rally.eGraphics}
+                                    width='400'
+                                    margin-bottom='10'
+                                />
+                                <br />
                             </div>
+                            <div>&nbsp;</div>
                             <Link
-                                className='btn btn-primary'
+                                // className='btn btn-primary'
                                 to={"/register?id=" + rally.eid}
                             >
-                                <button color='success'>REGISTER NOW!</button>
+                                <Button variant='contained' color='secondary'>
+                                    REGISTER NOW
+                                </Button>
                             </Link>
+                            <div>&nbsp;</div>
                             <div className='EventComments'>
                                 {rally.eventNotes}
                             </div>
@@ -81,18 +92,20 @@ class Rally extends Component {
                                 supporting state rep.
                                 <br />
                             </div>
-                            <div className='StateRepInfo'>
-                                <font className='stateRepName'>
-                                    {rally.eStateRepName}
-                                </font>
-                                <br />
-                                <font className='stateRepEmail'>
-                                    {rally.eStateRepEmail}
-                                </font>
-                                <br />
-                                <font className='stateRepPhone'>
-                                    {rally.eStateRepPhone}
-                                </font>
+                            <div className='BoxMessage'>
+                                <div className='StateRepInfo'>
+                                    <font className='stateRepName'>
+                                        {rally.stateRepName}
+                                    </font>
+                                    <br />
+                                    <font className='stateRepEmail'>
+                                        {rally.stateRepEmail}
+                                    </font>
+                                    <br />
+                                    <font className='stateRepPhone'>
+                                        {rally.stateRepPhone}
+                                    </font>
+                                </div>
                             </div>
                             <div className='VenueMap'>
                                 <div id='map'></div>
@@ -100,10 +113,6 @@ class Rally extends Component {
                                 {rally.vMapLink}
                             </div>
                         </div>
-                        {/* {console.log('eid:' + this.props.eid)}
-            {console.log('eDate:' + this.props.eDate)}
-            {console.log('starttime:' + this.props.eStart)}
-            {console.log('rally:' + this.props.rally.eDate)} */}
                     </div>
                 ))}
             </ul>

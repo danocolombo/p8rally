@@ -105,7 +105,7 @@ class Register extends Component {
                                     })
                                 }
                             />
-                            Subscribe to CR National Newsletter?
+                            CR National Newsletter?
                             <br />
                             <TextField
                                 label='Telephone'

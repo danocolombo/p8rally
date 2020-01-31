@@ -12,6 +12,7 @@ import Rallies from "./components/Rallies/Rallies";
 import Register from "./containers/Register/Register";
 import Rally from "./components/Rally/Rally";
 import Profile from "./views/Profile";
+import AdminHome from "./views/AdminHome";
 import { useAuth0 } from "./react-auth0-spa";
 import history from "./utils/history";
 
@@ -40,6 +41,7 @@ const App = () => {
                         <Route path='/register' exact component={Register} />
                         <Route path='/rally' exact component={Rally} />
                         <PrivateRoute path='/profile' component={Profile} />
+                        <PrivateRoute path='/adminHome' component={AdminHome} />
                     </Switch>
                 </Container>
                 <Footer />

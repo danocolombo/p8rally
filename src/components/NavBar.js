@@ -104,12 +104,12 @@ const NavBar = () => {
                                         </DropdownItem>
                                         <DropdownItem
                                             tag={RouterNavLink}
-                                            to='/profile'
+                                            to='/adminHome'
                                             className='dropdown-profile'
                                             activeClassName='router-link-exact-active'
                                         >
                                             <FontAwesomeIcon
-                                                icon='user'
+                                                icon='tools'
                                                 className='mr-3'
                                             />{" "}
                                             Admin

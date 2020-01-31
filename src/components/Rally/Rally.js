@@ -12,6 +12,7 @@ class Rally extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            eventId: 0,
             data: null,
             Rallies: []
         };
@@ -24,7 +25,11 @@ class Rally extends Component {
         // this gets the event id from the URL params
         let search = window.location.search;
         let params = new URLSearchParams(search);
+
         let theID = params.get("id");
+        console.log("theID:" + theID);
+        this.setState({ eventId: theID });
+        console.log("eventId:" + this.state.eventId);
         // save the id to the redux store
         // this.props.setEventID(params.get("id"));
         // this gets all the rally information, then passes it to redux
@@ -76,7 +81,7 @@ class Rally extends Component {
                             <div>&nbsp;</div>
                             <Link
                                 // className='btn btn-primary'
-                                to={"/register?id=" + rally.eid}
+                                to={"/register?id=" + this.state.eventId}
                             >
                                 <Button variant='contained' color='secondary'>
                                     REGISTER NOW

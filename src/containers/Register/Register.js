@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-
+import axios from "axios";
 import TextField from "@material-ui/core/TextField";
 import Checkbox from "@material-ui/core/Checkbox";
 import InputLabel from "@material-ui/core/InputLabel";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
+import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import "./Register.css";
@@ -25,19 +26,21 @@ class Register extends Component {
         lName: "",
         email: "",
         phone: "",
-        newletter: "",
+        newsletter: "",
         registrationCount: 1,
         crName: "",
         crCity: "",
         crState: "",
         crRole: "",
         hostP8: "",
-        notes: ""
+        notes: "",
+        disableRegisterBtn: false
     };
 
     handleFormSubmit = async event => {
         event.preventDefault();
 
+        //console.log(this.okayToRegister());
         console.log("REGI, REGI");
         console.log(this.state.fName);
         console.log(this.state.lName);
@@ -51,11 +54,57 @@ class Register extends Component {
         console.log(this.state.crRole);
         console.log(this.state.hostP8);
         console.log(this.state.notes);
+        if (this.okayToRegister) {
+            const response = await axios.post(
+                "https://evgvlc22t1.execute-api.us-east-1.amazonaws.com/UAT/event/register",
+                {
+                    eventId: "1",
+                    firstName: this.state.fName,
+                    lastName: this.state.lName,
+                    email: this.state.email,
+                    newsletter: this.state.newsletter,
+                    phone: this.state.phone,
+                    regCnt: this.state.registrationCount,
+                    churchName: this.state.crName,
+                    churchCity: this.state.crCity,
+                    churchState: this.state.crState,
+                    crRole: this.state.crRole,
+                    notes: ""
+                },
+                { headers: { "Content-Type": "application/json" } }
+            );
+            console.log(response.data);
+        }
     };
-
+    handleChange = name => event => {
+        this.setState({
+            [name]: event.target.value
+        });
+    };
+    okayToRegister() {
+        let returnValue = true;
+        if (this.state.fName.length < 1) returnValue = false;
+        if (this.state.lName.length < 1) returnValue = false;
+        if (this.state.email.length < 1) returnValue = false;
+        if (this.state.crName.length < 1) returnValue = false;
+        if (this.state.crCity.length < 1) returnValue = false;
+        return returnValue;
+    }
+    powerRegisterBtn() {
+        //now see if we enable REGISTER button to be enabled
+        var disableBtn = false;
+        //console.log("fName:>>" + this.state.fName + "<<");
+        if (this.state.fName.length < 1) disableBtn = true;
+        if (this.state.lName.length < 1) disableBtn = true;
+        if (this.state.email.length < 1) disableBtn = true;
+        if (this.state.crName.length < 1) disableBtn = true;
+        if (this.state.crCity.length < 1) disableBtn = true;
+        //console.log("fname.length: " + this.state.fName.length);
+        //console.log("flag:" + disableBtn);
+        return this.disableBtn;
+    }
     render() {
         // const classes = useStyles();
-
         return (
             <div>
                 <form onSubmit={this.handleFormSubmit}>
@@ -69,9 +118,10 @@ class Register extends Component {
                                 id='firstName'
                                 size='small'
                                 value={this.state.fName}
-                                onChange={e =>
-                                    this.setState({ fName: e.target.value })
-                                }
+                                onChange={this.handleChange("fName")}
+                                // onChange={e =>
+                                //     this.setState({ fName: e.target.value })
+                                // }
                             />
                             <TextField
                                 className='LastNameInput'
@@ -79,9 +129,7 @@ class Register extends Component {
                                 id='lastName'
                                 size='small'
                                 value={this.state.lName}
-                                onChange={e =>
-                                    this.setState({ lName: e.target.value })
-                                }
+                                onChange={this.handleChange("lName")}
                             />
                             <br />
                             <TextField
@@ -90,20 +138,14 @@ class Register extends Component {
                                 id='email'
                                 size='small'
                                 value={this.state.email}
-                                onChange={e =>
-                                    this.setState({ email: e.target.value })
-                                }
+                                onChange={this.handleChange("email")}
                                 length='100'
                             />
                             <br />
                             <Checkbox
                                 value='checked'
                                 value={this.state.newsletter}
-                                onChange={e =>
-                                    this.setState({
-                                        newsletter: e.target.value
-                                    })
-                                }
+                                onChange={this.handleChange("newsletter")}
                             />
                             CR National Newsletter?
                             <br />
@@ -111,9 +153,7 @@ class Register extends Component {
                                 label='Telephone'
                                 id='telephone'
                                 value={this.state.phone}
-                                onChange={e =>
-                                    this.setState({ phone: e.target.value })
-                                }
+                                onChange={this.handleChange("phone")}
                                 size='small'
                                 // paddingBottom='15px'
                             />
@@ -128,11 +168,9 @@ class Register extends Component {
                                 type='number'
                                 inputProps={{ min: 1 }}
                                 value={this.state.registrationCount}
-                                onChange={e =>
-                                    this.setState({
-                                        registrationCount: e.target.value
-                                    })
-                                }
+                                onChange={this.handleChange(
+                                    "registrationCount"
+                                )}
                                 InputLabelProps={{
                                     shrink: true
                                 }}
@@ -143,9 +181,7 @@ class Register extends Component {
                                 id='crChurchName'
                                 size='small'
                                 value={this.state.crName}
-                                onChange={e =>
-                                    this.setState({ crName: e.target.value })
-                                }
+                                onChange={this.handleChange("crName")}
                                 length='50'
                             />
                             <br />
@@ -154,9 +190,7 @@ class Register extends Component {
                                 id='crCity'
                                 size='small'
                                 value={this.state.crCity}
-                                onChange={e =>
-                                    this.setState({ crCity: e.target.value })
-                                }
+                                onChange={this.handleChange("crCity")}
                                 length='50'
                             />
                             <br />
@@ -170,9 +204,7 @@ class Register extends Component {
                                 label='State'
                                 id='crState'
                                 value={this.state.crState}
-                                onChange={e =>
-                                    this.setState({ crState: e.target.value })
-                                }
+                                onChange={this.handleChange("crState")}
                             >
                                 <MenuItem value={"AL"}>Alabama</MenuItem>
                                 <MenuItem value={"FL"}>Florida</MenuItem>
@@ -198,9 +230,7 @@ class Register extends Component {
                                 label='Role'
                                 id='crRole'
                                 value={this.state.crRole}
-                                onChange={e =>
-                                    this.setState({ crRole: e.target.value })
-                                }
+                                onChange={this.handleChange("crRole")}
                             >
                                 <MenuItem value={"ML"}>
                                     Ministry Leader
@@ -217,7 +247,15 @@ class Register extends Component {
                                 </MenuItem>
                             </Select>
                             <br />
-                            <button className='RegisterButton'>REGISTER</button>
+                            <Button
+                                className='RegisterButton'
+                                id='btnRegister'
+                                disabled={this.state.disableRegisterBtn}
+                                onClick={this.handleFormSubmit}
+                            >
+                                REGISTER
+                            </Button>
+                            <Button className='RegisterButton'>Cancel</Button>
                         </div>
                     </div>
                 </form>
